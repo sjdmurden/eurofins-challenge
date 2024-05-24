@@ -1,0 +1,23 @@
+@model MvcEurofins.Models.ChallengeModel
+
+<form method="post">
+    <div>
+        <label for="Start">Start Number:</label>
+        <input type="number" id="Start" name="Start" value="@Model.Start" />
+    </div>
+    <div>
+        <label for="End">End Number:</label>
+        <input type="number" id="End" name="End" value="@Model.End" />
+    </div>
+    <button type="submit">Generate</button>
+</form>
+
+@if (ViewBag.Numbers != null)
+{
+    <ul>
+        @foreach (var number in ViewBag.Numbers)
+        {
+            <li>@number</li>
+        }
+    </ul>
+}
