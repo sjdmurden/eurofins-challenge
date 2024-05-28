@@ -1,6 +1,6 @@
 @model MvcEurofins.Models.ChallengeModel
 
-<form method="post">
+<form id="challengeForm" method="post" onsubmit="return validateForm()">
     <div>
         <label for="Start">Start Number:</label>
         <input type="number" id="Start" name="Start" value="@Model.Start" />
@@ -11,6 +11,25 @@
     </div>
     <button type="submit">Generate</button>
 </form>
+
+<script>
+    function validateForm() {
+        var start = parseInt(document.getElementById("Start").value);
+        var end = parseInt(document.getElementById("End").value);
+        
+        if (isNaN(start) || isNaN(end)) {
+            alert("Please enter valid numbers for start and end.");
+            return false;
+        }
+
+        if (start > end) {
+            alert("Start number must be less than or equal to End number.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
 
 @if (ViewBag.Numbers != null)
 {
