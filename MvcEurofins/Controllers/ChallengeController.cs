@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using MvcEurofins.Models;
-using System.Collections.Generic;
 
 namespace MvcEurofins.Controllers;
 

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MvcEurofins")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc8829d846aa9c318f5405e1fd9eb9bef9697e31")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8162d4f9f2ba6c4172e84e960d03717e3fccc7a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("MvcEurofins")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MvcEurofins")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
