@@ -1,42 +1,57 @@
 @model MvcEurofins.Models.ChallengeModel
 
-<form id="challengeForm" method="post" onsubmit="return validateForm()">
-    <div>
-        <label for="Start">Start Number:</label>
-        <input type="number" id="Start" name="Start" value="@Model.Start" />
-    </div>
-    <div>
-        <label for="End">End Number:</label>
-        <input type="number" id="End" name="End" value="@Model.End" />
-    </div>
-    <button type="submit">Generate</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
 
-<script>
-    function validateForm() {
-        var start = parseInt(document.getElementById("Start").value);
-        var end = parseInt(document.getElementById("End").value);
-        
-        if (isNaN(start) || isNaN(end)) {
-            alert("Please enter valid numbers for start and end.");
-            return false;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz Challenge</title>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+</head>
+
+<body>
+    <form id="challengeForm" method="post" onsubmit="return validateForm()">
+        <div>
+            <label>Start Number:</label>
+            <input id="Start" name="Start" value="@Model.Start" />
+        </div>
+        <div>
+            <label>End Number:</label>
+            <input id="End" name="End" value="@Model.End" />
+        </div>
+        <button type="submit">Generate</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var start = parseInt(document.getElementById("Start").value);
+            var end = parseInt(document.getElementById("End").value);
+
+
+            if (isNaN(start) || isNaN(end)) {
+                alert("Please enter valid numbers for start and end.");
+                return false;
+            }
+
+            if (start > end) {
+                alert("Start number must be less than or equal to End number.");
+                return false;
+            }
+
+            return true;
         }
+    </script>
 
-        if (start > end) {
-            alert("Start number must be less than or equal to End number.");
-            return false;
-        }
-
-        return true;
+    @if (ViewBag.Numbers != null)
+    {
+        <ul class="results">
+            @foreach (var number in ViewBag.Numbers)
+            {
+                <li>@number</li>
+            }
+        </ul>
     }
-</script>
+</body>
 
-@if (ViewBag.Numbers != null)
-{
-    <ul>
-        @foreach (var number in ViewBag.Numbers)
-        {
-            <li>@number</li>
-        }
-    </ul>
-}
+</html>
