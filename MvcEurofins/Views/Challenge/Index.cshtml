@@ -25,21 +25,20 @@
 
     <script>
         function validateForm() {
-            var start = parseInt(document.getElementById("Start").value);
-            var end = parseInt(document.getElementById("End").value);
-
+            var start = parseInt(document.getElementById("Start").value)
+            var end = parseInt(document.getElementById("End").value)
 
             if (isNaN(start) || isNaN(end)) {
-                alert("Please enter valid numbers for start and end.");
-                return false;
+                alert("Please enter valid numbers for start and end.")
+                return false
             }
 
             if (start > end) {
-                alert("Start number must be less than or equal to End number.");
-                return false;
+                alert("Start number must be less than or equal to End number.")
+                return false
             }
 
-            return true;
+            return true
         }
     </script>
 
