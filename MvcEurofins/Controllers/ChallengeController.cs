@@ -42,6 +42,5 @@ public class ChallengeController : Controller
       }
       return numbers;
    }
-   
 }
 
